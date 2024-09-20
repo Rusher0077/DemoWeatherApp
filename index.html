@@ -3,90 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SkyWatch - Your Complete Weather Companion</title>
+    <title>Weather Wonderland</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
-    <link 
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    />
 </head>
 <body>
     <div class="container">
-        <div class="weather-input">
-            <div class="input-group">
-
-               <input 
-                    type="text"
-                    id="userLocation" 
-                    placeholder="Search for places..."
-                >
-                <i class="fas fa-search"></i>
-
-                <select name="converter" id="converter">
-                    <option>°C</option>
-                    <option>°F</option>
-                </select>
-
-                
+        <header>
+            <h1>Weather Wonderland</h1>
+            <div class="search-box">
+                <input type="text" id="cityInput" placeholder="Enter city name">
+                <button id="searchBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
             </div>
-            
-            <div class="weatherIcon"></div>
-            <h2 class="temparature"></h2>
-            <div class="feelslike"></div>
-            <div class="description"></div>
-            <hr>
-            <div class="date"></div>
-            <div class="city"></div>
-        </div>
-        <div class="weather-output">
-            <h2 class="heading">Today's Highlights</h2>
-            <br>
-            <div class="Hightlight">
-                <div class="humidity">
-                    Humidity
-                    <i class="fa-solid fa-water"></i>
-                    <h1 id="HValue"></h1>
+        </header>
+        <main>
+            <section id="currentWeather" class="weather-card">
+                <h2 id="cityName"></h2>
+                <div id="weatherInfo">
+                    <img id="weatherIcon" alt="Weather icon">
+                    <div id="temperature"></div>
                 </div>
-                <div class="wind-speed">
-                    Wind Speed
-                    <i class="fa-solid fa-wind"></i>
-                    <h1 id="HValue"></h1>
+                <div id="description"></div>
+                <div id="details">
+                    <div id="humidity"></div>
+                    <div id="windSpeed"></div>
+                    <div id="pressure"></div>
                 </div>
-                <div class="sun">
-                    <span>
-                        <i class="fa-solid fa-sun"></i>
-                        <p><span id="SRValue">Sunrise</span></p>
-                    </span>
-                    <span>
-                        <i class="fa-regular fa-sun"></i>
-                        <p><span id="SSValue">Sunset</span></p>
-                    </span>
-                </div>
-                <div class="clouds">
-                    Clouds
-                    <i class="fa-solid fa-cloud"></i>
-                    <h1 id="CValue"></h1>
-                </div>
-                <div class="uv-index">
-                    UV Index
-                    <i class="fa-solid fa-bacon"></i>
-                    <h1 id="UVValue"></h1>
-                </div>
-                <div class="pressure">
-                    Pressure
-                    <i class="fa-solid fa-volcano"></i>
-                    <h1 id="PValue"></h1>
-                </div>
-            </div>
-            <br>
-            <h2 class="heading">This week</h2>
-            <div class="forecast">
-
-            </div>
-
-        </div>
+            </section>
+            <section id="forecast">
+                <h2>5-Day Forecast</h2>
+                <div id="forecastContainer"></div>
+            </section>
+        </main>
     </div>
-    
+    <script src="script.js"></script>
 </body>
 </html>
